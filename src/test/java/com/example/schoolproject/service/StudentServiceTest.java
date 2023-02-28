@@ -20,6 +20,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 import java.util.Optional;
 
+
+
 @ExtendWith(MockitoExtension.class)
 class StudentServiceTest {
 
@@ -36,8 +38,8 @@ class StudentServiceTest {
 
     @BeforeEach
     void setUp() {
-        addStudentDto = new AddStudentDto("Wojtek ", "Nowy", 12);
-        student = new Student(1L, "Wojtek ", "Nowy", 12);
+        addStudentDto = new AddStudentDto("Wojtek ", "Nowy", 28);
+        student = new Student(1L, "Wojtek ", "Nowy", 28);
     }
 
     @Test
@@ -45,7 +47,7 @@ class StudentServiceTest {
         BDDMockito.given(studentRepository.save(mapper.dtoToStudent(addStudentDto)))
                 .willReturn(student);
         Assertions.assertThat(studentService.saveStudent(addStudentDto))
-                .isEqualTo(1L);
+                .isEqualTo(student);
     }
     @Test
     @DisplayName("Should  update student")
@@ -64,8 +66,6 @@ class StudentServiceTest {
     }
 
 
-
-
     @Test
     void shouldFindStudentById() {
         BDDMockito.given(studentRepository.findById(1L)).willReturn(Optional.of(student));
@@ -74,7 +74,12 @@ class StudentServiceTest {
 
         Assertions.assertThat(studentService.findStudentById(1L)).isEqualTo(studentDto);
     }
-
+//    @Test
+//    void shouldFindStudentById2(){
+//        StudentDto studentById = studentService.findStudentById(1L);
+//        assertThat(studentById).isNotNull();
+//        assertThat(studentById.getId()).isEqualTo(1L);
+//    }
 
 
     @Test

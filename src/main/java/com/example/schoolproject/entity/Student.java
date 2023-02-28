@@ -1,5 +1,6 @@
 package com.example.schoolproject.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
@@ -7,10 +8,10 @@ import jakarta.persistence.*;
 
 @Table(name = "student")
 @Entity
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
 @Setter
 public class Student {
 
@@ -21,6 +22,8 @@ public class Student {
 
     private String lastName;
     private int age;
+
+
 
 //    @ManyToOne
 //    @JoinColumn(name = "teacher_id")

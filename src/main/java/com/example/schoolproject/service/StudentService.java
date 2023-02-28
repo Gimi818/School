@@ -28,6 +28,7 @@ public class StudentService {
     }
 
     public List<StudentDto> findAll() {
+
         log.debug("Get all students");
         return studentRepository.findAll().stream()
                 .map(mapper::entityToStudentDto)
