@@ -1,10 +1,11 @@
 package com.example.schoolproject.service;
 
-import com.example.schoolproject.dto.AddStudentDto;
-import com.example.schoolproject.dto.StudentDto;
-import com.example.schoolproject.entity.Student;
-import com.example.schoolproject.mapper.Mapper;
-import com.example.schoolproject.repository.StudentRepository;
+import com.example.schoolproject.student.dto.AddStudentDto;
+import com.example.schoolproject.student.dto.StudentDto;
+import com.example.schoolproject.student.entity.Student;
+import com.example.schoolproject.student.mapper.Mapper;
+import com.example.schoolproject.student.repository.StudentRepository;
+import com.example.schoolproject.student.service.StudentService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

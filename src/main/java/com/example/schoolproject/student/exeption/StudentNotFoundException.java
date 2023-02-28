@@ -1,4 +1,4 @@
-package com.example.schoolproject.exeption;
+package com.example.schoolproject.student.exeption;
 
 public class StudentNotFoundException extends  RuntimeException {
     public StudentNotFoundException(Long id){

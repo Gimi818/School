@@ -1,4 +1,4 @@
-package com.example.schoolproject.entity;
+package com.example.schoolproject.student.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Id;

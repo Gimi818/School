@@ -1,9 +1,10 @@
 package com.example.schoolproject.controller;
 
-import com.example.schoolproject.dto.AddStudentDto;
-import com.example.schoolproject.dto.StudentDto;
-import com.example.schoolproject.entity.Student;
-import com.example.schoolproject.service.StudentService;
+import com.example.schoolproject.student.controller.StudentController;
+import com.example.schoolproject.student.dto.AddStudentDto;
+import com.example.schoolproject.student.dto.StudentDto;
+import com.example.schoolproject.student.entity.Student;
+import com.example.schoolproject.student.service.StudentService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,7 +15,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;

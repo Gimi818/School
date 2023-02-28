@@ -1,11 +1,11 @@
-package com.example.schoolproject.service;
+package com.example.schoolproject.student.service;
 
-import com.example.schoolproject.dto.AddStudentDto;
-import com.example.schoolproject.dto.StudentDto;
-import com.example.schoolproject.entity.Student;
+import com.example.schoolproject.student.dto.AddStudentDto;
+import com.example.schoolproject.student.dto.StudentDto;
+import com.example.schoolproject.student.entity.Student;
 import com.example.schoolproject.globalExeption.GlobalException;
-import com.example.schoolproject.mapper.Mapper;
-import com.example.schoolproject.repository.StudentRepository;
+import com.example.schoolproject.student.mapper.Mapper;
+import com.example.schoolproject.student.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
