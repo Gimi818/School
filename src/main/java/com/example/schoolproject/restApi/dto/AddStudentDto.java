@@ -1,4 +1,4 @@
-package com.example.schoolproject.student.dto;
+package com.example.schoolproject.restApi.dto;
 
 import lombok.*;
 

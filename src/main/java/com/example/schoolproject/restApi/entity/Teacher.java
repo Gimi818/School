@@ -1,13 +1,17 @@
-package com.example.schoolproject.teacher.entity;
+package com.example.schoolproject.restApi.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "teachers")
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

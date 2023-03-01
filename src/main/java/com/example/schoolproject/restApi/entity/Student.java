@@ -1,6 +1,5 @@
-package com.example.schoolproject.student.entity;
+package com.example.schoolproject.restApi.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;

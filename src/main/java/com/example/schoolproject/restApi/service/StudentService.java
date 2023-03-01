@@ -1,11 +1,11 @@
-package com.example.schoolproject.student.service;
+package com.example.schoolproject.restApi.service;
 
-import com.example.schoolproject.student.dto.AddStudentDto;
-import com.example.schoolproject.student.dto.StudentDto;
-import com.example.schoolproject.student.entity.Student;
+import com.example.schoolproject.restApi.dto.AddStudentDto;
+import com.example.schoolproject.restApi.dto.StudentDto;
+import com.example.schoolproject.restApi.entity.Student;
 import com.example.schoolproject.globalExeption.GlobalException;
-import com.example.schoolproject.student.mapper.Mapper;
-import com.example.schoolproject.student.repository.StudentRepository;
+import com.example.schoolproject.restApi.mapper.Mapper;
+import com.example.schoolproject.restApi.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class StudentService {
 
-    private static Logger logger = LoggerFactory.getLogger(StudentService.class);
+    private static  final  Logger logger = LoggerFactory.getLogger(StudentService.class);
     private final StudentRepository studentRepository;
     private final Mapper mapper;
 
@@ -89,7 +89,8 @@ public class StudentService {
 //    }
 //
 //    public StudentDto getProductById(Long id) {
-//        Student student = studentRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Product not found"));
+//        Student student = studentRepository.findById(id)
+//        .orElseThrow(() -> new EntityNotFoundException("Product not found"));
 //        return StudentMapperStruct.INSTANCE.toDto(student);
 //    }
 

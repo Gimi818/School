@@ -1,11 +1,12 @@
-package com.example.schoolproject.service;
+package com.example.schoolproject.student.service;
 
-import com.example.schoolproject.student.dto.AddStudentDto;
-import com.example.schoolproject.student.dto.StudentDto;
-import com.example.schoolproject.student.entity.Student;
-import com.example.schoolproject.student.mapper.Mapper;
-import com.example.schoolproject.student.repository.StudentRepository;
-import com.example.schoolproject.student.service.StudentService;
+import com.example.schoolproject.restApi.dto.AddStudentDto;
+import com.example.schoolproject.restApi.dto.StudentDto;
+import com.example.schoolproject.restApi.entity.Student;
+import com.example.schoolproject.restApi.mapper.Mapper;
+import com.example.schoolproject.restApi.repository.StudentRepository;
+import com.example.schoolproject.restApi.service.StudentService;
+import org.aspectj.lang.annotation.Before;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -22,6 +23,14 @@ import java.util.List;
 import java.util.Optional;
 
 
+/*
+Klasa Service przymuje w konstruktorze repository daltego musimy zastosować
+adnotacje @Mock na repository
+@Mock tworzy makiete repository która jest nam potrzebna do prawidowego działania service
+
+@InjectMocks tworzy instancję klasy i wstrzykuje do niej klasy opatrzone adnotacją @Mock.
+- wywołujemy na service poniewaz bedziemy testowac ta klase/metody
+ */
 
 @ExtendWith(MockitoExtension.class)
 class StudentServiceTest {

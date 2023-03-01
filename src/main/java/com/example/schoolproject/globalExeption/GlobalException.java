@@ -1,6 +1,6 @@
 package com.example.schoolproject.globalExeption;
 
-import com.example.schoolproject.student.exeption.StudentNotFoundException;
+import com.example.schoolproject.restApi.exeption.StudentNotFoundException;
 
 import java.util.function.Supplier;
 

@@ -1,10 +1,10 @@
-package com.example.schoolproject.controller;
+package com.example.schoolproject.student.controller;
 
-import com.example.schoolproject.student.controller.StudentController;
-import com.example.schoolproject.student.dto.AddStudentDto;
-import com.example.schoolproject.student.dto.StudentDto;
-import com.example.schoolproject.student.entity.Student;
-import com.example.schoolproject.student.service.StudentService;
+import com.example.schoolproject.restApi.controller.StudentController;
+import com.example.schoolproject.restApi.dto.AddStudentDto;
+import com.example.schoolproject.restApi.dto.StudentDto;
+import com.example.schoolproject.restApi.entity.Student;
+import com.example.schoolproject.restApi.service.StudentService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,20 +32,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 )
 
 public class StudentControllerTest {
-
-
     @MockBean
     private StudentService studentService;
     @Autowired
     private MockMvc mockMvc;
-
 
     private static AddStudentDto addStudentDto;
     private static String addStudentDtoJson;
     private static Student student;
     private static StudentDto studentDto;
     private static StudentDto secondStudentDto;
-
 
     @BeforeAll
     static void setUp() throws JsonProcessingException {

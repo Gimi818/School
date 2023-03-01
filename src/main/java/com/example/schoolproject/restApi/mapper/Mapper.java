@@ -1,8 +1,8 @@
-package com.example.schoolproject.student.mapper;
+package com.example.schoolproject.restApi.mapper;
 
-import com.example.schoolproject.student.dto.AddStudentDto;
-import com.example.schoolproject.student.dto.StudentDto;
-import com.example.schoolproject.student.entity.Student;
+import com.example.schoolproject.restApi.dto.AddStudentDto;
+import com.example.schoolproject.restApi.dto.StudentDto;
+import com.example.schoolproject.restApi.entity.Student;
 import org.springframework.stereotype.Component;
 
 @Component

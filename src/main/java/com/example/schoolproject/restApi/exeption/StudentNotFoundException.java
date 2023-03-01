@@ -1,4 +1,4 @@
-package com.example.schoolproject.student.exeption;
+package com.example.schoolproject.restApi.exeption;
 
 public class StudentNotFoundException extends  RuntimeException {
     public StudentNotFoundException(Long id){

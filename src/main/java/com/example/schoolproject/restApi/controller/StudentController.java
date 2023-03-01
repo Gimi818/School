@@ -1,9 +1,9 @@
-package com.example.schoolproject.student.controller;
+package com.example.schoolproject.restApi.controller;
 
-import com.example.schoolproject.student.dto.AddStudentDto;
-import com.example.schoolproject.student.dto.StudentDto;
-import com.example.schoolproject.student.entity.Student;
-import com.example.schoolproject.student.service.StudentService;
+import com.example.schoolproject.restApi.dto.AddStudentDto;
+import com.example.schoolproject.restApi.dto.StudentDto;
+import com.example.schoolproject.restApi.entity.Student;
+import com.example.schoolproject.restApi.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
