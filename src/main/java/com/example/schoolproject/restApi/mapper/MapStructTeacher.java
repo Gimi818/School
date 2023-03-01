@@ -15,8 +15,7 @@ public interface MapStructTeacher {
     TeacherDto entityMapToDto(Teacher teacher);
 
 
-    Teacher dtoMapToEntity(AddTeacherDto AddteacherDto);
 
-
+    Teacher dtoMapToEntity(AddTeacherDto addTeacherDto);
 
 }

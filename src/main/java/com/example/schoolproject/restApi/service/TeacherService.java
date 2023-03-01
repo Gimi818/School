@@ -58,7 +58,7 @@ public class TeacherService {
 
     }
 
-    public void updateTeacher(Long id, AddTeacherDto addTeacherDto) {
+    public Teacher updateTeacher(Long id, AddTeacherDto addTeacherDto) {
         log.info("Update Teacher");
         log.debug("Teacher id: " + id);
         Teacher teacher = teacherRepository.findById(id).orElseThrow();
@@ -66,10 +66,10 @@ public class TeacherService {
         teacher.setLastName(addTeacherDto.getLastName());
         teacher.setAge(addTeacherDto.getAge());
         teacher.setYearsOfExperience(addTeacherDto.getYearsOfExperience());
-        //teacherRepository.save(mapper.dtoToEntity(teacher, addTeacherDto));
-       teacherRepository.save(MapStructTeacher.MAPPER.dtoMapToEntity( addTeacherDto));
+        Teacher updatedTeacher = teacherRepository.save(teacher);
+        // teacherRepository.save(MapStructTeacher.MAPPER.dtoMapToEntity( addTeacherDto));
         log.info("Teacher updated");
-
+        return MapStructTeacher.MAPPER.dtoMapToEntity(addTeacherDto);
     }
 
     public void deleteTeacher(Long id) {

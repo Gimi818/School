@@ -3,6 +3,7 @@ package com.example.schoolproject.teacher.service;
 import com.example.schoolproject.restApi.dto.AddTeacherDto;
 import com.example.schoolproject.restApi.dto.TeacherDto;
 import com.example.schoolproject.restApi.entity.Teacher;
+import com.example.schoolproject.restApi.mapper.MapStructTeacher;
 import com.example.schoolproject.restApi.mapper.TeacherMapper;
 import com.example.schoolproject.restApi.repository.TeacherRepository;
 import com.example.schoolproject.restApi.service.TeacherService;
@@ -37,7 +38,7 @@ public class TeacherServiceTest {
 
     @Mock
     TeacherMapper teacherMapper;
-
+    MapStructTeacher mapStructTeacher;
     @InjectMocks
     private TeacherService teacherService;
     private AddTeacherDto addTeacherDto;
