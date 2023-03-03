@@ -38,7 +38,7 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateStudent(@PathVariable Long id, @RequestBody AddStudentDto addStudentDto) {
+    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody AddStudentDto addStudentDto) {
         studentService.updateStudent(id, addStudentDto);
         return ResponseEntity.status(HttpStatus.OK).build();
     }

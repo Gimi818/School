@@ -9,9 +9,9 @@ import jakarta.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
 @Setter
+@Data
 public class Student {
 
     @Id
