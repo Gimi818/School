@@ -6,12 +6,10 @@ import com.example.schoolproject.restApi.entity.Student;
 import com.example.schoolproject.restApi.mapper.Mapper;
 import com.example.schoolproject.restApi.repository.StudentRepository;
 import com.example.schoolproject.restApi.service.StudentService;
-import org.aspectj.lang.annotation.Before;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
@@ -41,9 +39,9 @@ class StudentServiceTest {
     private Mapper mapper;
 
     @InjectMocks
-    private StudentService studentService;
+    private StudentService studentService ;
     private AddStudentDto addStudentDto;
-    private Student student;
+    private Student student ;
     private StudentDto studentDto;
 
     @BeforeEach

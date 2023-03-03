@@ -4,16 +4,18 @@ import lombok.*;
 
 @Getter
 @Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class AddTeacherDto {
 
+public class AddTeacherDto{
 
     private String firstName;
     private String lastName;
-
-    private int age;
-
+    private  int age;
     private int yearsOfExperience;
+
 }
+
+
+

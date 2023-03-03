@@ -3,10 +3,12 @@ package com.example.schoolproject.restApi.mapper;
 import com.example.schoolproject.restApi.dto.AddTeacherDto;
 import com.example.schoolproject.restApi.dto.TeacherDto;
 import com.example.schoolproject.restApi.entity.Teacher;
+import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
+
 public interface MapStructTeacher {
 
 
