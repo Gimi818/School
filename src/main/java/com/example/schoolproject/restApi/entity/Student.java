@@ -24,7 +24,7 @@ public class Student {
     private int age;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
-//    @JoinColumn(name = "schoolClass_id")
+
     @JsonIgnore
     private SchoolClass schoolClass;
 

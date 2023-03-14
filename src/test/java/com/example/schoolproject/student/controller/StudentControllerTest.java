@@ -112,23 +112,5 @@ public class StudentControllerTest {
 
     }
 
-/* mockMvc.perform - wykonuje kontretne wywołania (post(/students/add))
-    przez tą metode musimy dodać w teście "throws Execption"
-    - .andExpect() - (jsonPath) - metoda która sprawdza nam metode
-    $ - oznacza nasz obiekt który chemy sprawdzic
-    Machers.is oczekująca wartość
-    ObjectMapper - zmienia nam Jsona na obiekt
-    objectMapper.writeValueAsString
- */
-
-
-//    @Test
-//    void should_Not_Find_Student_When_Student_Does_Not_Exist() throws  Exception{
-//        BDDMockito.given(studentService.findStudentById(100L)).willThrow(new StudentNotFoundException(100L));
-//
-//        mockMvc.perform(get("/students/100"))
-//                .andExpect(status().isNotFound())
-//                .andExpect(jsonPath("$.message", Matchers.is("Student with id 100 not found")));
-//    }
 
 }

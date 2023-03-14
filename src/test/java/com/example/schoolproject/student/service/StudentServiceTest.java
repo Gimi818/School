@@ -21,14 +21,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-/*
-Klasa Service przymuje w konstruktorze repository daltego musimy zastosować
-adnotacje @Mock na repository
-@Mock tworzy makiete repository która jest nam potrzebna do prawidowego działania service
 
-@InjectMocks tworzy instancję klasy i wstrzykuje do niej klasy opatrzone adnotacją @Mock.
-- wywołujemy na service poniewaz bedziemy testowac ta klase/metody
- */
 
 @ExtendWith(MockitoExtension.class)
 class StudentServiceTest {
