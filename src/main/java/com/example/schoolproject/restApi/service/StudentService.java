@@ -1,38 +1,37 @@
 package com.example.schoolproject.restApi.service;
 
-import com.example.schoolproject.globalExeption.GlobalException;
 import com.example.schoolproject.restApi.dto.AddStudentDto;
 import com.example.schoolproject.restApi.dto.StudentDto;
 import com.example.schoolproject.restApi.entity.Student;
-import com.example.schoolproject.restApi.mapper.MapperStudent;
+import com.example.schoolproject.globalExeption.GlobalException;
+import com.example.schoolproject.restApi.mapper.Mapper;
 import com.example.schoolproject.restApi.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 @Slf4j
 public class StudentService {
 
-    private static final Logger logger = LoggerFactory.getLogger(StudentService.class);
+    private static  final  Logger logger = LoggerFactory.getLogger(StudentService.class);
     private final StudentRepository studentRepository;
-    private final MapperStudent mapperStudent;
+    private final Mapper mapper;
 
-    public StudentService(StudentRepository studentRepository, MapperStudent mapperStudent) {
+    public StudentService(StudentRepository studentRepository, Mapper mapper) {
         this.studentRepository = studentRepository;
-        this.mapperStudent = mapperStudent;
-
+        this.mapper = mapper;
     }
 
     public List<StudentDto> findAll() {
 
         log.debug("Get all students");
         return studentRepository.findAll().stream()
-                .map(mapperStudent::entityMapToDto)
+                .map(mapper::entityToStudentDto)
                 .collect(Collectors.toList());
     }
 
@@ -41,32 +40,27 @@ public class StudentService {
         log.debug("Student id: " + id);
         Student student = studentRepository.findById(id).orElseThrow(GlobalException.studentNotFound(id));
 
-
-        return mapperStudent.entityMapToDto(student);
+        return mapper.entityToStudentDto(student);
     }
 
     public Student saveStudent(AddStudentDto addStudentDto) {
 
         log.info("Save Student");
         log.debug("AddStudentDto " + addStudentDto);
-        Student student = studentRepository.save(mapperStudent.dtoMapToEntity(addStudentDto));
+        Student student = studentRepository.save(mapper.dtoToStudent(addStudentDto));
         log.info("Student Saved");
         return student;
 
     }
 
 
-    public Student updateStudent(Long id, AddStudentDto addStudentDto) {
+    public void updateStudent(Long id, AddStudentDto addStudentDto) {
 
         log.info("Update Student");
         log.debug("AddStudentDto " + addStudentDto);
         Student student = studentRepository.findById(id).orElseThrow(GlobalException.studentNotFound(id));
-        student.setFirstName(addStudentDto.getFirstName());
-        student.setLastName(addStudentDto.getLastName());
-        student.setAge(addStudentDto.getAge());
-        Student updatedStudent = studentRepository.save(student);
+        studentRepository.save(mapper.dtoToStudent2(student, addStudentDto));
         log.info("Student updated");
-        return mapperStudent.dtoMapToEntity(addStudentDto);
     }
 
     public void deleteStudent(Long id) {
@@ -81,5 +75,75 @@ public class StudentService {
 }
 
 
+//    public List<StudentDto> getAllStudents() {
+//        List<Student> students = studentRepository.findAll();
+//        return students.stream()
+//                .map(StudentMapperStruct.INSTANCE::toDto)
+//                .collect(Collectors.toList());
+//    }
+//
+//    public Student addStudent(StudentDto studentDto) {
+//        Student student = StudentMapperStruct.INSTANCE.toEntity(studentDto);
+//        Student createdStudent = studentRepository.save(student);
+//        return createdStudent;
+//    }
+//
+//    public StudentDto getProductById(Long id) {
+//        Student student = studentRepository.findById(id)
+//        .orElseThrow(() -> new EntityNotFoundException("Product not found"));
+//        return StudentMapperStruct.INSTANCE.toDto(student);
+//    }
+
+//    public List<StudentDto> getAllStudents() {
+//        List<Student> students = studentRepository.findAll();
+//        return students.stream()
+//                .map(StudentMapper.INSTANCE::entityToDto)
+//                .collect(Collectors.toList());
+//    }
+//
+//    public Student addStudent(StudentDto studentDto) {
+//        Student student = StudentMapper.INSTANCE.dtoToEntity(studentDto);
+//        Student createdStudent = studentRepository.save(student);
+//        return createdStudent;
+//    }
+
+
+//    public StudentDto createDto(StudentDto studentDto) {
+//        Student student = mapToEntity(studentDto);
+//        Student newStudent = studentRepository.save(student);
+//        StudentDto studentResponse = mapToDTO(newStudent);
+//        return studentResponse;
+//
+//    }
+
+
+// convert Entity into DTO
+
+//    private StudentDto mapToDTO(Student student) {
+//        StudentDto studentDto = mapper.map(student, StudentDto.class);
+////        StudentDto studentDto1 = new StudentDto();
+////        studentDto1.setId(student.getId());
+////        studentDto1.setFirstName(student.getFirstName());
+////        studentDto1.setLastName(student.getLastName());
+////        studentDto1.setAge(student.getAge());
+//        return studentDto;
+//    }
+//
+//
+//    // convert DTO to entity
+//    private Student mapToEntity(StudentDto studentDto) {
+//        Student student = mapper.map(studentDto, Student.class);
+//        return student;
+//    }
+//
+//
+//
+//    public StudentDto creteStudent(StudentDto studentDto) {
+//        Student student = mapToEntity(studentDto);
+//        Student newStudent = studentRepository.save(student);
+//        StudentDto studentResponse = mapToDTO(newStudent);
+//        return studentResponse;
+//
+//    }
 
 
