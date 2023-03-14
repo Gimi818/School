@@ -13,13 +13,14 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/schoolClass")
 public class SchoolClassController {
 
     private final SchoolClassService schoolClassService;
 
 
-    @PostMapping("/schoolClass")
-    public ResponseEntity<SchoolClass> saveSchoolClass(@PathVariable AddSchoolClassDto addSchoolClassDto) {
+    @PostMapping("/add")
+    public ResponseEntity<SchoolClass> saveSchoolClass(@RequestBody AddSchoolClassDto addSchoolClassDto) {
         return new ResponseEntity<>(schoolClassService.saveSchoolClass(addSchoolClassDto), HttpStatus.CREATED);
 
     }

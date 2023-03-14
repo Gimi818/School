@@ -1,5 +1,6 @@
 package com.example.schoolproject.restApi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
@@ -22,8 +23,9 @@ public class Student {
     private String lastName;
     private int age;
 
-    @ManyToOne
-    @JoinColumn(name = "schoolClass_id")
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+//    @JoinColumn(name = "schoolClass_id")
+    @JsonIgnore
     private SchoolClass schoolClass;
 
 //    @ManyToOne

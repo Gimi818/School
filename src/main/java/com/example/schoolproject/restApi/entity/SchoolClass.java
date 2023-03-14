@@ -1,5 +1,6 @@
 package com.example.schoolproject.restApi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,12 +21,13 @@ public class SchoolClass {
     private String name;
     private int numberOfStudents;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "student", cascade = CascadeType.ALL)
-    private Set<Teacher> teachersList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "schoolClass", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Student> studentList;
 
-    public SchoolClass(String name, int numberOfStudents, Set<Teacher> teachersList) {
+    public SchoolClass(String name, int numberOfStudents, Set<Student> studentList) {
         this.name = name;
         this.numberOfStudents = numberOfStudents;
-        this.teachersList = teachersList;
+        this.studentList = studentList;
     }
 }
