@@ -22,7 +22,9 @@ public class Student {
     private String lastName;
     private int age;
 
-
+    @ManyToOne
+    @JoinColumn(name = "schoolClass_id")
+    private SchoolClass schoolClass;
 
 //    @ManyToOne
 //    @JoinColumn(name = "teacher_id")

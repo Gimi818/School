@@ -47,7 +47,7 @@ class StudentServiceTest {
     @BeforeEach
     void setUp() {
         addStudentDto = new AddStudentDto("Wojtek ", "Nowy", 28);
-        student = new Student(1L, "Wojtek ", "Nowy", 28);
+        student = new Student(1L, "Wojtek ", "Nowy", 28,null);
     }
 
     @Test
